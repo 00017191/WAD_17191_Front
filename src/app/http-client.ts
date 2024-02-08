@@ -127,13 +127,13 @@ export class HttpService {
             })
         );
     }
-    getOneActivity(id: number): Observable<UserModel> {
+    getOneActivity(id: number): Observable<ActivityModel> {
         const url = `http://localhost:5249/api/activity/${id}`
         let options_: any = { observe: 'response', headers: new HttpHeaders({ 'Content-Type': 'application/json', Accept: 'text/json' })};
         return this.httpClient.request('get', url, options_).pipe(
-            mergeMap((response: any): Observable<UserModel> => {
+            mergeMap((response: any): Observable<ActivityModel> => {
                 if (response.body !== null) {
-                    let data: UserModel = response.body;
+                    let data: ActivityModel = response.body;
                     return of(data);
                 } else return throwError(() => new Error('data is empty!'));
             })

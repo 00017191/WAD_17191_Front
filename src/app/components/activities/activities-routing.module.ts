@@ -16,7 +16,7 @@ const profileRoutes: Routes = [
         pathMatch: 'full',
     },
     {
-        path: 'update',
+        path: 'update/:id',
         component: UpdateActivityComponent,
         pathMatch: 'full',
     },

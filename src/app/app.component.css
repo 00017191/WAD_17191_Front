@@ -19,7 +19,6 @@ li {
 
 .navbar-item {
     width: 150px;
-
     display: flex;
     flex-direction: row;
     gap: 10px;

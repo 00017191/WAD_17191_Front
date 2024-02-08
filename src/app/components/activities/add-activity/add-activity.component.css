@@ -1,0 +1,37 @@
+.main {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+button {
+    width: 150px;
+}
+
+.main-form {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.main-form div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+input {
+    width: 200px;
+}
+
+label {
+    width: 150px;
+}

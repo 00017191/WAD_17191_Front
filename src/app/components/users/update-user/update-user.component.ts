@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { HttpService } from 'src/app/http-client';
+import { ActivatedRoute, Router } from '@angular/router';
+import { HttpService, UserCreateAndUpdateModel } from 'src/app/http-client';
 
 @Component({
   selector: 'app-update-user',
@@ -10,8 +10,12 @@ import { HttpService } from 'src/app/http-client';
 })
 export class UpdateUserComponent {
   userForm!: FormGroup;
+  userId!: number;
 
-  constructor(private client: HttpService, private router: Router){}
+  constructor(private client: HttpService, private router: Router, private route: ActivatedRoute) {
+    this.userId = parseInt(this.route.snapshot.paramMap.get('id') || '', 10);
+      this.getUserById(this.userId);
+  }
 
   ngOnInit(): void {
     this.userForm = new FormGroup({
@@ -19,6 +23,26 @@ export class UpdateUserComponent {
       email: new FormControl('', Validators.required),
       weight: new FormControl(0, Validators.required),
       age: new FormControl(0, Validators.required),
+    });
+  }
+
+  getUserById(id: number): void {
+    this.client.getOneUser(id).subscribe({
+      next: (data) => {
+        this.fillForm(data);
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    });
+  }
+
+  fillForm(model: UserCreateAndUpdateModel): void {
+    this.userForm.patchValue({
+      name: model.name,
+      email: model.email,
+      weight: model.weight,
+      age: model.age,
     });
   }
 
