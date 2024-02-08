@@ -4,6 +4,8 @@ import { UsersListComponent } from './users-list/users-list.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 
+
+// Routing
 const profileRoutes: Routes = [
     {
         path: '',

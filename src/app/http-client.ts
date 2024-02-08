@@ -7,6 +7,8 @@ import { Observable, catchError, from, mergeMap, of, throwError } from "rxjs";
     providedIn: 'root',
   })
 
+  // Main service for making request
+
 export class HttpService {
     constructor(private httpClient: HttpClient){}
     getUsers(): Observable<UserModel[]> {

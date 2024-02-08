@@ -14,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UsersModule,
+    UsersModule, // Link to my module for finding its own routing module
     ActivitiesModule,
     HttpClientModule
   ],
