@@ -1,1 +1,18 @@
-<p>users-list works!</p>
+<div class="main">
+    <div class="user-grid">
+      <div class="user" *ngFor="let user of users; let i = index">
+        <img src="../../../../assets/Icons/user-avatar.png" width="40" alt="">
+        <p><strong>User ID:</strong> {{ user.id }}</p>
+        <p><strong>Name:</strong> {{ user.name }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Weight:</strong> {{ user.weight }}</p>
+        <p><strong>Age:</strong> {{ user.age }}</p>
+        <button class="update-user" [routerLink]="['/update', user.id]">Update</button>
+        <button class="delete" (click)="delete(user.id)">Delete</button>
+      </div>
+      <div class="user-add">
+        <button routerLink="create">+ Add User</button>
+      </div>
+    </div>
+  </div>
+  

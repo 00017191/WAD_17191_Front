@@ -1,1 +1,26 @@
-<p>update-user works!</p>
+<div class="main">
+    <p><strong>Create new user</strong></p>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="main-form">
+            <div>
+                <label>Name</label>
+                <input type="text" formControlName="name" />
+            </div>
+            <div>
+                <label>Email</label>
+                <input type="text" formControlName="email" />
+            </div>
+            <div>
+                <label>Weight</label>
+                <input type="number" formControlName="weight" />
+            </div>
+            <div>
+                <label>Age</label>
+                <input type="number" formControlName="age" />
+            </div>
+        </div>
+
+        <button type="submit" [disabled]="userForm.invalid" class="add">Update user info</button>
+        <button routerLink="" class="back">Back</button>
+    </form>
+</div>

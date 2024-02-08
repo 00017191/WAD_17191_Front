@@ -1,0 +1,50 @@
+.main {
+    padding: 40px;
+}
+
+.activity-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+  }
+  
+  .activity {
+    border: 1px solid #ccc;
+    border-radius: 16px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .activity button{
+    background-color: white;
+    width: 100px;
+    border-radius: 8px;
+  }
+
+  .activity-add {
+    border: 1px solid #ccc;
+    border-radius: 16px;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .activity-add button {
+    background-color: white;
+    width: 100px;
+    border-radius: 8px;
+  }
+
+  .activity .delete:hover {
+    background-color: red;
+  }
+
+  .activity .update-activity:hover {
+    background-color: blue;
+  }
+  

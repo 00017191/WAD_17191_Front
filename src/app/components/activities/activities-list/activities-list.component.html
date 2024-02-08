@@ -1,1 +1,18 @@
-<p>activities-list works!</p>
+<div class="main">
+  <div class="activity-grid">
+    <div class="activity" *ngFor="let activity of activities; let i = index">
+      <img src="../../../../assets/Icons/activity.png" width="40" alt="">
+      <p><strong>Activity ID:</strong> {{ activity.id }}</p>
+      <p><strong>Type:</strong> {{ activity.activityType }}</p>
+      <p><strong>Calories burned:</strong> {{ activity.caloriesBurned }}</p>
+      <p><strong>Distance:</strong> {{ activity.distance }}</p>
+      <p><strong>Duration:</strong> {{ activity.duration }}</p>
+      <p><strong>User:</strong> {{ activity.userId }}</p>
+      <button class="update-activity" [routerLink]="['/update', activity.id]">Update</button>
+      <button class="delete" (click)="delete(activity.id)">Delete</button>
+    </div>
+    <div class="activity-add">
+      <button routerLink="create">+ Add activity</button>
+    </div>
+  </div>
+</div>
